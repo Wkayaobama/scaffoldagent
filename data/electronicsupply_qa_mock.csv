@@ -1,0 +1,6 @@
+id,question,answer,category,source
+1,What is the warranty period for the UltraHD TV?,The UltraHD TV comes with a 2-year warranty.,warranty,UltraHD_TV_manual.pdf
+2,Which laptops are available with 16GB RAM?,"Models X200, Y500, and ZBook all come with 16GB RAM.",laptops,laptop_inventory_2025.xlsx
+3,Do you offer bulk discounts on HDMI cables?,"Yes, bulk discounts are available for orders over 50 units.",cables,pricing_policy_2025.pdf
+4,What is the return policy for smartphones?,Smartphones can be returned within 30 days of purchase with a receipt.,returns,return_policy_2025.pdf
+5,Are there any eco-friendly appliances in stock?,"Yes, we have a range of eco-friendly refrigerators and washing machines.",appliances,eco_products_2025.pdf
