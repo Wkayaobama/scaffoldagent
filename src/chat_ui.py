@@ -2,7 +2,7 @@
 A simple Streamlit chat UI for testing the researcher agent with Pinecone and OpenAI.
 """
 import streamlit as st
-from src.orchestrator.triage import AgentOrchestrator
+from orchestrator.triage import AgentOrchestrator
 
 
 st.set_page_config(page_title="Electronics Q&A Chatbot", page_icon="🤖")
