@@ -88,9 +88,10 @@ def create_pinecone_index(index_name: str, dimension: int = 1536, metric: str = 
     )
     print(f"Created Pinecone index '{index_name}' with dimension {dimension} and metric '{metric}' in region '{region}'")
 
-def query_agent(question: str, index_name: str, top_k: int = 1):
+def query_agent(question: str, index_name: str, top_k: int = 1, agent=None):
     """
     Embed the user question, query Pinecone for top_k matches, and print the results.
+    If an agent with a behavioral prompt is provided, prepend the prompt to the user query.
     """
     import openai
     from pinecone import Pinecone
@@ -102,6 +103,9 @@ def query_agent(question: str, index_name: str, top_k: int = 1):
     openai.api_key = OPENAI_API_KEY
     pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index(index_name)
+    # Use agent's behavioral prompt if provided
+    if agent and hasattr(agent, "format_query"):
+        question = agent.format_query(question)
     # Embed the query
     response = openai.embeddings.create(
         input=question,

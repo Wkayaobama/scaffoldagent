@@ -2,31 +2,28 @@
 A simple Streamlit chat UI for testing the researcher agent with Pinecone and OpenAI.
 """
 import streamlit as st
-from vectordb import query_agent
+from src.orchestrator.triage import AgentOrchestrator
 
-st.title("Electronic supply store Agent Chat UI")
 
-if "history" not in st.session_state:
-    st.session_state["history"] = []
+st.set_page_config(page_title="Electronics Q&A Chatbot", page_icon="🤖")
+st.title("Electronics Q&A Chatbot")
 
-user_input = st.text_input("Ask a question:")
-
-if st.button("Send") and user_input:
-    # Query the agent (Pinecone + OpenAI)
-    st.session_state["history"].append(("user", user_input))
-    # Capture output
-    import io
-    import sys
-    buffer = io.StringIO()
-    sys.stdout = buffer
-    query_agent(user_input, "electronicsupplyv2")
-    sys.stdout = sys.__stdout__
-    agent_response = buffer.getvalue()
-    st.session_state["history"].append(("agent", agent_response))
+# Initialize orchestrator and agent only once
+if "orchestrator" not in st.session_state:
+    st.session_state.orchestrator = AgentOrchestrator()
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 # Display chat history
-for role, msg in st.session_state["history"]:
-    if role == "user":
-        st.markdown(f"**You:** {msg}")
-    else:
-        st.markdown(f"**Agent:** {msg}")
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
+# Chat input at the bottom
+if user_input := st.chat_input("Ask a question about electronics..."):
+    # Add user message
+    st.session_state.messages.append({"role": "user", "content": user_input})
+    # Get agent response directly from orchestrator
+    agent_response = st.session_state.orchestrator.answer_query(user_input)
+    st.session_state.messages.append({"role": "assistant", "content": agent_response})
+    # st.experimental_rerun()  # No need to rerun since session state handles updates

@@ -4,3 +4,13 @@ id,question,answer,category,source
 3,Do you offer bulk discounts on HDMI cables?,"Yes, bulk discounts are available for orders over 50 units.",cables,pricing_policy_2025.pdf
 4,What is the return policy for smartphones?,Smartphones can be returned within 30 days of purchase with a receipt.,returns,return_policy_2025.pdf
 5,Are there any eco-friendly appliances in stock?,"Yes, we have a range of eco-friendly refrigerators and washing machines.",appliances,eco_products_2025.pdf
+6,What is the battery life of the X200 laptop?,The X200 laptop offers up to 12 hours of battery life.,laptops,laptop_specs_2025.pdf
+7,Do you have wireless charging pads in stock?,"Yes, wireless charging pads are currently available.",accessories,inventory_2025.xlsx
+8,What is the price of the SmartHome Thermostat?,The SmartHome Thermostat is priced at $129.99.,thermostats,pricing_2025.pdf
+9,Can I return headphones without a receipt?,Headphones can only be returned with a valid purchase receipt.,returns,return_policy_2025.pdf
+10,Are there any discounts on gaming monitors?,"Yes, gaming monitors are 10% off this month.",monitors,promotions_2025.pdf
+11,Which smartphones support 5G?,"Models A10, B20, and C30 all support 5G connectivity.",smartphones,smartphone_specs_2025.xlsx
+12,What is the delivery time for large appliances?,Large appliances are delivered within 5-7 business days.,appliances,delivery_policy_2025.pdf
+13,Do you offer installation services for washing machines?,"Yes, installation services are available for an additional fee.",appliances,services_2025.pdf
+14,Is there a student discount on laptops?,"Yes, students receive a 5% discount on all laptops with valid ID.",laptops,student_discount_2025.pdf
+15,What is the warranty on kitchen blenders?,Kitchen blenders come with a 1-year warranty.,appliances,blender_manual_2025.pdf
